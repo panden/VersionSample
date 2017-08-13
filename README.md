@@ -17,10 +17,11 @@ VersionLib是一个逻辑框架，实现对Android App版本进行更新的一�
 
 
 
-# 权限：库中会使用到如下权限，需要动态申请：
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+# 权限：
+库中会使用到如下权限，需要动态申请：
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_EXTERNAL_STORAGE
+android.permission.ACCESS_NETWORK_STATE
 
 
 # 代码实现：
@@ -66,10 +67,10 @@ appPath：新版app的文件地址
 
 2.先配置版本更新接口，配置新版更新服务器地址，请求方式，请求参数等信息；
 HttpBuilder httpBuilder=new HttpBuilder()
-                    .setMethod(HttpAsyncTask.Method.Get)//请求方法，get/post
-                    .setTimeOut(15*1000)//设置请求超时时间
-                    .setUrl("http://www.netac.com/wifi/I370/APK/version.txt");//新版更新的地址
-                    //.setValues();//配置请求需要携带的参数
+.setMethod(HttpAsyncTask.Method.Get)//请求方法，get/post
+.setTimeOut(15*1000)//设置请求超时时间
+.setUrl("url");//新版更新的地址
+//.setValues();//配置请求需要携带的参数
                     
 3.配置版本更新信息
 Builder builder=new Builder()
