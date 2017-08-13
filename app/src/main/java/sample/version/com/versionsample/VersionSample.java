@@ -36,14 +36,16 @@ public class VersionSample extends VersionHelper {
     public static void createHelper(Application app){
         if(sVersionSample==null){
             HttpBuilder httpBuilder=new HttpBuilder()
-                    .setMethod(HttpAsyncTask.Method.Get)
-                    .setTimeOut(15*1000)
-                    .setUrl("http://www.netac.com/wifi/I370/APK/version.txt");
+                    .setMethod(HttpAsyncTask.Method.Get)//请求方法，get/post
+                    .setTimeOut(15*1000)//设置请求超时时间
+                    .setUrl("http://www.netac.com/wifi/I370/APK/version.txt");//新版更新的地址
+                    //.setValues();//配置请求需要携带的参数
             Builder builder=new Builder()
                     .setHttpBuilder(httpBuilder).setWifiAutoUpdate(true);
                     //设置自动更新，只要有新版本就会更新
                     //.setAutoUpdate(true);
                     //设置新版app下载存放的地址
+                    //Context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)+"/apk/apk文件名"
                     //.setNewApkPath("path")
                     //设置wifi下是否自动更新，已开启自动更新，则wifi自动更新也会被开启；当开启自动更新后，
                     // 就不会回调onShowUpdateDialog而是直接去自动下载和安装
